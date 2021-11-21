@@ -1,0 +1,19 @@
+{
+  "name": "priconne-vibrant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "node-vibrant": "3.1.6",
+    "got": "11.8.3",
+    "cheerio": "1.0.0-rc.10",
+    "sharp": "0.29.3",
+    "axios": "0.24.0",
+    "fs": "0.0.1-security"
+  },
+  "author": "",
+  "license": "ISC"
+}
