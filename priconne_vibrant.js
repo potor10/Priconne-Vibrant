@@ -5,7 +5,7 @@ const sharp = require('sharp')
 const axios = require('axios')
 const fs = require('fs')
 
-href = "https://redive.estertion.win/card/full/"
+href = "https://redive.estertion.win/icon/unit/"
 
 const getVibrant = (url) => {
   let artwork = new Vibrant(url)
@@ -70,12 +70,12 @@ const generateJson = async () => {
       const vibrant_data = await getVibrant(`images/${files[i]}`)
       let vibrantColors = { 
         full_id: files[i].substring(0, 6),
-        vibrant: vibrant_data.Vibrant.getHex(),
-        darkVibrant: vibrant_data.DarkVibrant.getHex(),
-        lightVibrant: vibrant_data.LightVibrant.getHex(),
-        muted: vibrant_data.Muted.getHex(),
-        darkMuted: vibrant_data.DarkMuted.getHex(),
-        lightMuted: vibrant_data.LightMuted.getHex(),
+        vibrant: (vibrant_data.Vibrant != null) ? vibrant_data.Vibrant.getHex() : null,
+        darkVibrant: (vibrant_data.DarkVibrant != null) ? vibrant_data.DarkVibrant.getHex() : null,
+        lightVibrant: (vibrant_data.LightVibrant != null) ? vibrant_data.LightVibrant.getHex() : null,
+        muted: (vibrant_data.Muted != null) ? vibrant_data.Muted.getHex() : null,
+        darkMuted: (vibrant_data.DarkMuted != null) ? vibrant_data.DarkMuted.getHex() : null,
+        lightMuted: (vibrant_data.LightMuted != null) ? vibrant_data.LightMuted.getHex() : null
       }
 
       let base_id = files[i].substring(0, 4)
